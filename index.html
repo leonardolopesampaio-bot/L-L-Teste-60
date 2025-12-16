@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
-<title>Nós dois ❤️</title>
+<title>Para Você ❤️</title>
 
 <style>
   body {
@@ -66,6 +66,7 @@
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s;
+    display: none; /* começa escondido */
   }
 
   #surprise-btn:hover {
@@ -100,10 +101,10 @@
   <div id="final">Você é minha vida, eu te amo!</div>
 </div>
 
-<!-- Novo botão surpresa -->
+<!-- Botão surpresa, começa escondido -->
 <button id="surprise-btn" onclick="showSurprise()">Surpresa!</button>
 
-<!-- Novo conteúdo surpresa -->
+<!-- Conteúdo surpresa -->
 <div id="surprise-content">
   <img src="surpresa.jpg" alt="Surpresa">
   <div>Ansioso por este momento!</div>
@@ -113,34 +114,4 @@
   <source src="musica.mp3" type="audio/mpeg">
 </audio>
 
-<script>
-  let index = 1;
-  const totalFotos = 6;
-  const tempo = 3500;
-
-  function startApp() {
-    document.getElementById("start").style.display = "none";
-    document.getElementById("content").style.display = "block";
-
-    const audio = document.getElementById("music");
-    audio.currentTime = 23;
-    audio.play();
-
-    setInterval(() => {
-      index++;
-      if (index <= totalFotos) {
-        document.getElementById("foto").src = `foto${index}.jpg`;
-      } else {
-        document.getElementById("final").style.display = "block";
-      }
-    }, tempo);
-  }
-
-  function showSurprise() {
-    document.getElementById("surprise-content").style.display = "block";
-  }
-</script>
-
-</body>
-</html>
 
